@@ -14,12 +14,11 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.customcode;
-
-import com.divroll.functions.rest.CustomCodeResponse;
-import com.divroll.functions.rest.CustomCodeRequest;
+package com.divroll.backend.functions.jar;
 
 import java.util.List;
+
+import com.divroll.backend.functions.customcode.CustomCodeMethod;
 
 /**
  *
@@ -27,8 +26,6 @@ import java.util.List;
  * @version 1.0
  * @since 1.0
  */
-public interface CustomCodeMethod {
-	String getMethodName();
-	List<String> getParams();
-	CustomCodeResponse execute(CustomCodeRequest request);
+public abstract class JarEntryObject {
+	public abstract List<CustomCodeMethod> methods();
 }

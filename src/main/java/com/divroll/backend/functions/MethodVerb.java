@@ -14,32 +14,17 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.rest;
+package com.divroll.backend.functions;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.io.Serializable;
 
 /**
+ * Represents the HTTP verbs which can be specified by a <code>CustomCodeRequest</code>.
  *
  * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
  * @version 1.0
  * @since 1.0
  */
-public class CustomCodeResponse {
-	  private final int responseStatus;
-	  private final Map<String, ?> responseMap;
-	  public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = responseMap;
-	  }	  
-	  public CustomCodeResponse(int responseCode) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = new HashMap<String, Object>();
-	  }
-	public int getResponseStatus() {
-		return responseStatus;
-	}
-	public Map<String, ?> getResponseMap() {
-		return responseMap;
-	}	  
+public enum MethodVerb implements Serializable {
+  GET, POST, PUT, DELETE;
 }

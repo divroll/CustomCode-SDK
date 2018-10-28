@@ -14,17 +14,21 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions;
+package com.divroll.backend.functions.customcode;
 
-import java.io.Serializable;
+import com.divroll.backend.functions.rest.CustomCodeRequest;
+import com.divroll.backend.functions.rest.CustomCodeResponse;
+
+import java.util.List;
 
 /**
- * Represents the HTTP verbs which can be specified by a <code>CustomCodeRequest</code>.
  *
  * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
  * @version 1.0
  * @since 1.0
  */
-public enum MethodVerb implements Serializable {
-  GET, POST, PUT, DELETE;
+public interface CustomCodeMethod {
+	String getMethodName();
+	List<String> getParams();
+	CustomCodeResponse execute(CustomCodeRequest request);
 }
