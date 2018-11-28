@@ -37,10 +37,5 @@
       <artifactId>httpclient</artifactId>
       <version>4.5.3</version>
     </dependency>
-    <!--<dependency>-->
-      <!--<groupId>org.parseplatform</groupId>-->
-      <!--<artifactId>parse-sdk-java</artifactId>-->
-      <!--<version>1.5-SNAPSHOT-Divroll</version>-->
-    <!--</dependency>-->
   </dependencies>
 </project>
