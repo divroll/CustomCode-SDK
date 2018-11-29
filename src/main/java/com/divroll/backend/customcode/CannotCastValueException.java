@@ -19,7 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.divroll.backend.functions;
+package com.divroll.backend.customcode;
 
 /**
  *
@@ -27,6 +27,8 @@ package com.divroll.backend.functions;
  * @version 0-SNAPSHOT
  * @since 0-SNAPSHOT
  */
-public class TestCustomCodeMethod {
-
+public class CannotCastValueException extends Exception {
+    public CannotCastValueException(String proposedClassName, String actualClassName) {
+        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
+    }
 }

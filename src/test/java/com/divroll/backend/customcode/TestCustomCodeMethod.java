@@ -19,10 +19,7 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.divroll.backend.functions.rest;
-
-import java.util.HashMap;
-import java.util.Map;
+package com.divroll.backend.customcode;
 
 /**
  *
@@ -30,21 +27,6 @@ import java.util.Map;
  * @version 0-SNAPSHOT
  * @since 0-SNAPSHOT
  */
-public class CustomCodeResponse {
-	  private final int responseStatus;
-	  private final Map<String, ?> responseMap;
-	  public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = responseMap;
-	  }	  
-	  public CustomCodeResponse(int responseCode) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = new HashMap<String, Object>();
-	  }
-	public int getResponseStatus() {
-		return responseStatus;
-	}
-	public Map<String, ?> getResponseMap() {
-		return responseMap;
-	}	  
+public class TestCustomCodeMethod {
+
 }

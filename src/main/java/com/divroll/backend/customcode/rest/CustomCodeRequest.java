@@ -19,12 +19,12 @@
  * Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
  * 02110-1301 USA, or see the FSF site: http://www.fsf.org.
  */
-package com.divroll.backend.functions.rest;
+package com.divroll.backend.customcode.rest;
 
 import java.io.*;
 import java.util.Map;
 
-import com.divroll.backend.functions.MethodVerb;
+import com.divroll.backend.customcode.MethodVerb;
 
 /**
  *
