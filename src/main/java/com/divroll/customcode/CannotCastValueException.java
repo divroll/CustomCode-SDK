@@ -14,14 +14,17 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions;
+package com.divroll.customcode;
 
 /**
+ *
  *
  * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
  * @version 1.0
  * @since 1.0
  */
-public class TestCustomCodeMethod {
-
+public class CannotCastValueException extends Exception {
+    public CannotCastValueException(String proposedClassName, String actualClassName) {
+        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
+    }
 }

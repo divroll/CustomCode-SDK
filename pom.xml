@@ -4,7 +4,7 @@
 
   <groupId>com.divroll.functions</groupId>
   <artifactId>sdk</artifactId>
-  <version>ZERO-SNAPSHOT</version>
+  <version>0-SNAPSHOT</version>
   <packaging>jar</packaging>
   <name>sdk</name>
   <url>http://maven.apache.org</url>

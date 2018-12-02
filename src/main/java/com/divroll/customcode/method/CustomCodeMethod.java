@@ -14,17 +14,21 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions;
+package com.divroll.customcode.method;
+
+import com.divroll.customcode.rest.CustomCodeResponse;
+import com.divroll.customcode.rest.CustomCodeRequest;
+
+import java.util.List;
 
 /**
- *
  *
  * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
  * @version 1.0
  * @since 1.0
  */
-public class CannotCastValueException extends Exception {
-    public CannotCastValueException(String proposedClassName, String actualClassName) {
-        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
-    }
+public interface CustomCodeMethod {
+	String getMethodName();
+	List<String> getParams();
+	CustomCodeResponse execute(CustomCodeRequest request);
 }

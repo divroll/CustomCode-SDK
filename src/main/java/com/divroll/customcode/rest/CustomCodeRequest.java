@@ -14,12 +14,12 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.rest;
+package com.divroll.customcode.rest;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
-import com.divroll.functions.MethodVerb;
+import com.divroll.customcode.MethodVerb;
 
 /**
  *
