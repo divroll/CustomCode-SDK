@@ -14,12 +14,12 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.rest;
+package com.divroll.backend.customcode.rest;
+
+import com.divroll.backend.customcode.MethodVerb;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-
-import com.divroll.functions.MethodVerb;
 
 /**
  *
@@ -36,11 +36,11 @@ public class CustomCodeRequest {
 	private final long counter;
 
 	public CustomCodeRequest(MethodVerb verb,
-			String url,
-			Map<String, String> params,
-			byte[] body,
-			String methodName,
-			long counter) {
+                             String url,
+                             Map<String, String> params,
+                             byte[] body,
+                             String methodName,
+                             long counter) {
 		this.verb = verb;
 		this.url = url;
 		this.methodName = methodName;

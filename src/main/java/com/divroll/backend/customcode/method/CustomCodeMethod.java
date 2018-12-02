@@ -14,10 +14,12 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.rest;
+package com.divroll.backend.customcode.method;
 
-import java.util.HashMap;
-import java.util.Map;
+import com.divroll.backend.customcode.rest.CustomCodeRequest;
+import com.divroll.backend.customcode.rest.CustomCodeResponse;
+
+import java.util.List;
 
 /**
  *
@@ -25,21 +27,8 @@ import java.util.Map;
  * @version 1.0
  * @since 1.0
  */
-public class CustomCodeResponse {
-	  private final int responseStatus;
-	  private final Map<String, ?> responseMap;
-	  public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = responseMap;
-	  }	  
-	  public CustomCodeResponse(int responseCode) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = new HashMap<String, Object>();
-	  }
-	public int getResponseStatus() {
-		return responseStatus;
-	}
-	public Map<String, ?> getResponseMap() {
-		return responseMap;
-	}	  
+public interface CustomCodeMethod {
+	String getMethodName();
+	List<String> getParams();
+	CustomCodeResponse execute(CustomCodeRequest request);
 }

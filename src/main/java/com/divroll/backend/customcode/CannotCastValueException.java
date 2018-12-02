@@ -14,18 +14,17 @@
  * limitations under the License.
  *
  */
-package com.divroll.functions.jar;
-
-import java.util.List;
-
-import com.divroll.functions.customcode.CustomCodeMethod;
+package com.divroll.backend.customcode;
 
 /**
+ *
  *
  * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
  * @version 1.0
  * @since 1.0
  */
-public abstract class JarEntryObject {
-	public abstract List<CustomCodeMethod> methods();
+public class CannotCastValueException extends Exception {
+    public CannotCastValueException(String proposedClassName, String actualClassName) {
+        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
+    }
 }
