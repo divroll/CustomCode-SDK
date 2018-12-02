@@ -18,8 +18,10 @@ package com.divroll.backend.customcode.rest;
 
 import com.divroll.backend.customcode.MethodVerb;
 
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import java.util.Scanner;
 
 /**
  *
@@ -30,17 +32,17 @@ import java.util.Map;
 public class CustomCodeRequest {
 	private final MethodVerb verb;
 	private final String url;
-	private final byte[] body;
+	private final InputStream body;
 	private final Map<String, String> params;
 	private final String methodName;
 	private final long counter;
 
 	public CustomCodeRequest(MethodVerb verb,
-                             String url,
-                             Map<String, String> params,
-                             byte[] body,
-                             String methodName,
-                             long counter) {
+							 String url,
+							 Map<String, String> params,
+							 InputStream body,
+							 String methodName,
+							 long counter) {
 		this.verb = verb;
 		this.url = url;
 		this.methodName = methodName;
@@ -74,13 +76,15 @@ public class CustomCodeRequest {
 	}
 
 
-	public byte[] getBody() {
+	public InputStream getBody() {
 		return body;
 	}
 
 	public String getStringBody() {
 		if(body != null) {
-			return new String(body, StandardCharsets.UTF_8);
+			try (Scanner scanner = new Scanner(body, "UTF-8")) {
+				return scanner.useDelimiter("\\A").next();
+			}
 		}
 		return null;
 	}
