@@ -43,4 +43,10 @@
       <!--<version>1.5-SNAPSHOT-Divroll</version>-->
     <!--</dependency>-->
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>internal</id>
+      <url>file://${project.build.directory}/mvn-repo</url>
+    </repository>
+  </distributionManagement>
 </project>

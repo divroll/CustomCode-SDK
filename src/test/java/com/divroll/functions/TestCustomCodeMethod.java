@@ -18,9 +18,9 @@ package com.divroll.functions;
 
 /**
  *
- * @author <a href="mailto:kerby@dotweblabs.com">Kerby Martino</a>
- * @version 1.0
- * @since 1.0
+ * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
+ * @version 0-SNAPSHOT
+ * @since 0-SNAPSHOT
  */
 public class TestCustomCodeMethod {
 
