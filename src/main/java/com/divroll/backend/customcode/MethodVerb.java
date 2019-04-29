@@ -24,6 +24,7 @@ package com.divroll.backend.customcode;
 import java.io.Serializable;
 
 /**
+ * Represents the HTTP verbs which can be specified by a <code>CustomCodeRequest</code>.
  *
  * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
  * @version 0-SNAPSHOT
