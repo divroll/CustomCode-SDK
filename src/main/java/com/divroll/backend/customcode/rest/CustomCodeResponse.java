@@ -31,20 +31,24 @@ import java.util.Map;
  * @since 0-SNAPSHOT
  */
 public class CustomCodeResponse {
-	  private final int responseStatus;
-	  private final Map<String, ?> responseMap;
-	  public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = responseMap;
-	  }	  
-	  public CustomCodeResponse(int responseCode) {
-		    this.responseStatus = responseCode;
-		    this.responseMap = new HashMap<String, Object>();
-	  }
+	private final int responseStatus;
+	private Map<String, ?> responseMap = null;
+	private byte[] responseBody = null;
+	public CustomCodeResponse(int responseCode, byte[] responseBody) {
+		this.responseStatus = responseCode;
+		this.responseBody = responseBody;
+	}
+	public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
+		this.responseStatus = responseCode;
+		this.responseMap = responseMap;
+	}
 	public int getResponseStatus() {
 		return responseStatus;
 	}
 	public Map<String, ?> getResponseMap() {
 		return responseMap;
-	}	  
+	}
+	public byte[] getResponseBody() {
+		return responseBody;
+	}
 }
