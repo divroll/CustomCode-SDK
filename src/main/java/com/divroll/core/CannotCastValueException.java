@@ -18,23 +18,18 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode.method;
-
-import com.divroll.backend.customcode.rest.CustomCodeRequest;
-import com.divroll.backend.customcode.rest.CustomCodeResponse;
-
-import java.util.List;
+package com.divroll.core;
 
 /**
- * The CustomCodeMethod interface defines the structure for a custom code method.
- * It declares methods to get the method name, get the parameters, and execute the method.
+ * The CannotCastValueException class represents an exception that is thrown
+ * when a value cannot be cast to a specified type.
  *
  * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
  * @version 0-SNAPSHOT
  * @since 0-SNAPSHOT
  */
-public interface CustomCodeMethod {
-	String getMethodName();
-	List<String> getParams();
-	CustomCodeResponse execute(CustomCodeRequest request);
+public class CannotCastValueException extends Exception {
+    public CannotCastValueException(String proposedClassName, String actualClassName) {
+        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
+    }
 }

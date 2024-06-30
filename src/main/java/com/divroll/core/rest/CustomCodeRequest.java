@@ -18,12 +18,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode.rest;
+package com.divroll.core.rest;
 
-import com.divroll.backend.customcode.MethodVerb;
+import com.divroll.core.MethodVerb;
 
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Scanner;
 

@@ -18,18 +18,40 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode;
+package com.divroll.core.rest;
+
+import java.util.Map;
 
 /**
- * The CannotCastValueException class represents an exception that is thrown
- * when a value cannot be cast to a specified type.
+ * The CustomCodeResponse class represents the response from a custom code method.
+ * It encapsulates details about the HTTP response status, the response body as a byte array,
+ * and the response as a map.
+ *
+ * This class provides getter methods for all these properties.
  *
  * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
  * @version 0-SNAPSHOT
  * @since 0-SNAPSHOT
  */
-public class CannotCastValueException extends Exception {
-    public CannotCastValueException(String proposedClassName, String actualClassName) {
-        super(String.format("Cannot cast %s to a %s", actualClassName, proposedClassName));
-    }
+public class CustomCodeResponse {
+	private final int responseStatus;
+	private Map<String, ?> responseMap = null;
+	private byte[] responseBody = null;
+	public CustomCodeResponse(int responseCode, byte[] responseBody) {
+		this.responseStatus = responseCode;
+		this.responseBody = responseBody;
+	}
+	public CustomCodeResponse(int responseCode, Map<String, ?> responseMap) {
+		this.responseStatus = responseCode;
+		this.responseMap = responseMap;
+	}
+	public int getResponseStatus() {
+		return responseStatus;
+	}
+	public Map<String, ?> getResponseMap() {
+		return responseMap;
+	}
+	public byte[] getResponseBody() {
+		return responseBody;
+	}
 }

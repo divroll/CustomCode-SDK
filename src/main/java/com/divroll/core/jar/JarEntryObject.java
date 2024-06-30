@@ -18,9 +18,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode.jar;
+package com.divroll.core.jar;
 
-import com.divroll.backend.customcode.method.CustomCodeMethod;
+import com.divroll.core.method.CustomCodeMethod;
 
 import java.util.List;
 

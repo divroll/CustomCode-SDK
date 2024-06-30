@@ -18,17 +18,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode;
+package com.divroll.core.method;
 
-import java.io.Serializable;
+import com.divroll.core.rest.CustomCodeRequest;
+import com.divroll.core.rest.CustomCodeResponse;
+
+import java.util.List;
 
 /**
- * Represents the HTTP verbs which can be specified by a <code>CustomCodeRequest</code>.
+ * The CustomCodeMethod interface defines the structure for a custom code method.
+ * It declares methods to get the method name, get the parameters, and execute the method.
  *
  * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
  * @version 0-SNAPSHOT
  * @since 0-SNAPSHOT
  */
-public enum MethodVerb implements Serializable {
-  GET, POST, PUT, DELETE;
+public interface CustomCodeMethod {
+	String getMethodName();
+	List<String> getParams();
+	CustomCodeResponse execute(CustomCodeRequest request);
 }

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.backend.customcode;
+package com.divroll;
 
 public class TestCustomCodeMethod {
 
