@@ -26,6 +26,8 @@ import com.divroll.backend.customcode.rest.CustomCodeResponse;
 import java.util.List;
 
 /**
+ * The CustomCodeMethod interface defines the structure for a custom code method.
+ * It declares methods to get the method name, get the parameters, and execute the method.
  *
  * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
  * @version 0-SNAPSHOT
