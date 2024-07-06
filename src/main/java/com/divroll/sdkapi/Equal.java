@@ -1,4 +1,6 @@
 /*
+ * Copyright (C) 2024 Divroll
+ *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -16,8 +18,14 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.functions;
+package com.divroll.sdkapi;
 
-public class TestCustomCodeMethod {
+public class Equal extends Condition {
 
+    EntityProperty value;
+
+    public Equal(String property, EntityProperty value) {
+        super(property);
+        this.value = value;
+    }
 }

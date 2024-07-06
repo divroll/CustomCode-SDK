@@ -18,17 +18,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.divroll.core;
+package com.divroll.sdkapi;
 
-import java.io.Serializable;
-
-/**
- * Represents the HTTP verbs which can be specified by a <code>CustomCodeRequest</code>.
- *
- * @author <a href="mailto:kerby@divroll.com">Kerby Martino</a>
- * @version 0-SNAPSHOT
- * @since 0-SNAPSHOT
- */
-public enum MethodVerb implements Serializable {
-  GET, POST, PUT, DELETE;
+public class StringProperty extends EntityProperty<String> {
+    
+    public StringProperty(String value) {
+        super(value);
+    }
 }

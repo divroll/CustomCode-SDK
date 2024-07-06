@@ -1,0 +1,36 @@
+/*
+ * Copyright (C) 2024 Divroll
+ *
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+package com.divroll.sdkapi;
+
+public class InRange extends Condition {
+
+    private final EntityProperty min;
+    private final EntityProperty max;
+
+    public InRange(String name, EntityProperty min, EntityProperty max) {
+        super(name);
+        if (!min.getClass().equals(max.getClass())) {
+            throw new IllegalArgumentException("min and max must be of the same type");
+        }
+        this.min = min;
+        this.max = max;
+    }
+}
