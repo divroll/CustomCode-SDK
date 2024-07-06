@@ -23,7 +23,12 @@ public class MetadataProperty extends EntityProperty<Map<String, EntityProperty>
 
     public <T extends EntityProperty> T get(String name, Class<T> clazz) 
         throws CannotCastValueException {
-        return asA(clazz);
+        EntityProperty property = getValue().get(name);
+        if (property != null && property.isA(clazz)) {
+            return (T) property.asA(clazz);
+        } else {
+            throw new CannotCastValueException(clazz.getCanonicalName(), property != null ? property.getClass().getCanonicalName() : "null");
+        }
     }
 
     public void set(String name, EntityProperty value) {

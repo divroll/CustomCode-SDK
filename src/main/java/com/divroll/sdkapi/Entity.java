@@ -50,7 +50,12 @@ public class Entity extends EntityProperty<Map<String, EntityProperty>> {
     }
 
     public <T extends EntityProperty> T get(String name, Class<T> clazz) throws CannotCastValueException {
-        return asA(clazz);
+        EntityProperty property = getValue().get(name);
+        if (property != null && property.isA(clazz)) {
+            return (T) property.asA(clazz);
+        } else {
+            throw new CannotCastValueException(clazz.getCanonicalName(), property != null ? property.getClass().getCanonicalName() : "null");
+        }
     }
 
     public void set(String name, EntityProperty value) {
@@ -121,18 +126,27 @@ public class Entity extends EntityProperty<Map<String, EntityProperty>> {
         setMetadataProperty("type", new StringProperty(type));
     }
     
+    public StringProperty getType() throws CannotCastValueException {
+        return getMetadataProperty("type", StringProperty.class);
+    }
+
     private <T extends EntityProperty> T getMetadataProperty(String key, Class<T> clazz) throws CannotCastValueException {
         MetadataProperty metadata = get(METADATA_KEY, MetadataProperty.class);
         return metadata != null ? metadata.get(key, clazz) : null;
     }
 
     private void setMetadataProperty(String key, EntityProperty value) throws CannotCastValueException {
-        MetadataProperty metadata = get(METADATA_KEY, MetadataProperty.class);
-        if (metadata == null) {
-            metadata = new MetadataProperty(key, value);
+        try {
+            MetadataProperty metadata = get(METADATA_KEY, MetadataProperty.class);
+            if (metadata == null) {
+                metadata = new MetadataProperty(key, value);
+                set(METADATA_KEY, metadata);
+            } else {
+                metadata.set(key, value);
+            }
+        } catch (CannotCastValueException e) {
+            MetadataProperty metadata = new MetadataProperty(key, value);
             set(METADATA_KEY, metadata);
-        } else {
-            metadata.set(key, value);
         }
     }
 
